@@ -182,7 +182,7 @@ describe("Pizza test, sprint 3 challenge", () => {
     const specialInstructions = document.querySelector('#special-text')
     const sizeOptions = screen.getAllByRole('option')
 
-    userEvent.type(nameInput, 'Tony Stark')
+    userEvent.type(nameInput, 'Donkey')
     userEvent.selectOptions(sizeDropdown, sizeOptions[1])
 
     userEvent.click(toppingsChecklist[1])
@@ -190,7 +190,7 @@ describe("Pizza test, sprint 3 challenge", () => {
     userEvent.type(specialInstructions, 'Here are the special instructions')
 
     await waitFor(() => {
-      expect(screen.getByDisplayValue(/tony stark/i)).toBeInTheDocument()
+      expect(screen.getByDisplayValue(/donkey/i)).toBeInTheDocument()
     })
     expect(sizeOptions[1].selected).toBe(true)
     expect(toppingsChecklist[0]).not.toBeChecked()
